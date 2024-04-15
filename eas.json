@@ -1,0 +1,30 @@
+{
+  "cli": {
+    "version": ">= 7.8.1"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_BACKEND_URL": "https://abstoreback.onrender.com/"
+      }
+    },
+    "production": {
+      "env": {
+        "EXPO_PUBLIC_BACKEND_URL": "https://abstoreback.onrender.com/"
+      }
+    },
+    "test": {
+      "env": {
+        "EXPO_PUBLIC_BACKEND_URL": "https://abstoreback.onrender.com/"
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}
