@@ -104,7 +104,6 @@ const Form = ({ showError }: { showError: (error: string) => void }) => {
       <CustomText style={styles.label}>Email-Address</CustomText>
       <CustomInput
         autoCapitalize="none"
-        defaultValue="yoftahemerkebu2@gmail.com"
         placeholder="Type your email"
         onChangeText={(e) => setEmail(e)}
       />
@@ -113,7 +112,6 @@ const Form = ({ showError }: { showError: (error: string) => void }) => {
         secureTextEntry
         autoCapitalize="none"
         placeholder="Type your password"
-        defaultValue="ca20af2f-4a8c-43a9-a5ef-3362ccf1e56f"
         onChangeText={(e) => setPassword(e)}
       />
       <CustomView style={{ flexDirection: "row", alignItems: "center" }}>
@@ -143,8 +141,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 25,
     fontWeight: "bold",
-    // color: "#177AD5",
-    color: "red",
+    color: "#177AD5",
     alignSelf: "center",
   },
   subtitle: {
