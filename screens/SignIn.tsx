@@ -86,7 +86,7 @@ const Form = ({ showError }: { showError: (error: string) => void }) => {
   const { mutate: forgotMutate, isPending: forgetIsPending } = useMutation({
     mutationFn: forgotPasswordDriver,
     onSuccess: (data) => showError(data.message),
-    onError: (error) => showError(error.message),
+    onError: (error) => {console.log(error);showError(error.message)},
   });
 
   function handleSignIn() {
@@ -98,6 +98,7 @@ const Form = ({ showError }: { showError: (error: string) => void }) => {
       forgotMutate(email);
     } else showError("Please input valid email address!");
   }
+
   return (
     <>
       <CustomText style={styles.label}>Email-Address</CustomText>
@@ -117,7 +118,7 @@ const Form = ({ showError }: { showError: (error: string) => void }) => {
       />
       <CustomView style={{ flexDirection: "row", alignItems: "center" }}>
         <CustomText>Forgot password ?</CustomText>
-        <Button mode="text" onPress={handleForgot} disabled={forgetIsPending}>
+        <Button mode="text" onPress={handleForgot} disabled={forgetIsPending} loading={forgetIsPending}>
           Get One Time Password
         </Button>
       </CustomView>

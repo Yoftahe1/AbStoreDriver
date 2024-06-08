@@ -82,7 +82,7 @@ export function deleteDriver({ id, token }: { id: string; token: string }) {
 
 export function forgotPasswordDriver(email: string) {
   return axiosInstance
-    .patch(`/driver/forgotPassword`, { email })
+    .patch(`/drivers/forgotPassword`, { email })
     .then((res: any) => res.data)
     .catch((error: any) => {
       throw error.response.data;
